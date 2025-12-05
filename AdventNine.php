@@ -11,7 +11,7 @@ require_once('AdventOfCode.php');
 class AdventNine extends AdventOfCode {
 
   public string $day = 'Nine';
-  public bool $test  = false;
+  public bool $test  = true;
   public int $frameWait = 100000;
   private string $solution = '';
   public int $finishCount = 0;

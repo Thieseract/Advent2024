@@ -18,13 +18,13 @@ class aocUI {
   public bool $didClick = false;
   private array $windowSize = [1920, 1080];
   public array $drawables = [];
-  private $window;
-  private $vg;
+  public $window;
+  public $vg;
   public $dayOne;
 
   public function __construct() {
 
-    $this->dayOne = new OneA();
+    $this->dayOne = new OneA($this->vg);
 
     if (!glfwInit()) {
       throw new Exception('GLFW could not be initialized!');
@@ -363,7 +363,7 @@ class aocUI {
     $this->didClick = false;
 
     echo 'pushed';
-    $this->dayOne->main();
+    $this->dayOne->main($this->vg, $this);
   }
 
   /**
